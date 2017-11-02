@@ -34,8 +34,12 @@
                 { label: 'Last 7 Days', duration: { unit: 'week', value: 1 }},
                 { label: 'Custom Range', custom: 'true' }
             ];
+            $scope.pickerOptions = {};
+            $scope.pickerOptions.maxRange = 180;
+
             $scope.comboButton = true;
             $scope.configuring = ($scope.expandConfigure) ?  true : false;
+            
             // Options for initial setup of date time picker in order of precedence
             // 1. Label
             //const label = 'Last 24 Hours';
