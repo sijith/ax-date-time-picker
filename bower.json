@@ -1,0 +1,23 @@
+{
+    "name": "date-time-picker",
+    "version": "0.1.0",
+    "description": "Another angular directive for selecting date and time ranges",
+    "main": "app/main.js",
+    "scripts": {
+        "test": "test"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:gabyvs/date-time-picker.git"
+    },
+    "keywords": [
+        "Date Picker",
+        "Date Range Picker"
+    ],
+    "author": "Gabriela Vazquez <gabs.vz@gmail.com>",
+    "contributors": [
+        "Oscar Ponce <wigahluk@gmail.com>"
+    ],
+    "copyright": "Copyright © 2015 Gabriela Vazquez"
+}

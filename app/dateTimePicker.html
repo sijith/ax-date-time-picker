@@ -1,0 +1,61 @@
+<div class="date-time-picker">
+    <div ng-show="pickerEnabled">
+      <div class="main-label-container">
+        <a class="main-date-time-label" ng-class="configuring ? 'configuring' : 'closed'" ng-click="configuring = !configuring">
+          <span class="dt-lighter">{{ range.from | date: 'EEE' }}</span>
+          <span class="dt-bolder">{{ range.from | date: 'd MMM yyyy' }}</span>
+          <span class="dt-lighter">{{ range.from | date: 'HH:mm' }}</span>
+          <span class="dt-bolder">&nbsp;&ndash;&nbsp;</span>
+          <span class="dt-lighter">{{ range.to | date: 'EEE' }}</span>
+          <span class="dt-bolder">{{ range.to | date: 'd MMM yyyy' }}</span>
+          <span class="dt-lighter">{{ range.to | date: 'HH:mm' }}</span>
+          <span class="dt-lighter">{{ threeLetterTimezoneLabel }}</span>
+        </a>
+      </div>
+      <button class="btn-refresh btn btn-sm" href="" ng-click="refresh()"><i class="icon-refresh"></i></button>
+      <div class="clearfix"></div>
+    </div>
+  <div class="date-time-configure" ng-show="configuring">
+    <div class="sections">
+      <ax-range-panel ng-hide="mode == 'absolute'"
+                   observer="observer"
+                   dictionary="dictionary"
+                   hide-time-unit="hideTimeUnit"
+                   selected-from="selectedFrom"
+                   selected-duration="selectedDuration"
+                   single-date="singleDate"></ax-range-panel>
+      <div class="date-range-selection">
+        <ax-double-calendar
+          observer="observer"
+          max-range="maxRange"
+          single-date="singleDate"></ax-double-calendar>
+      </div>
+    </div>
+    <div class="bottom-section">
+      <div class="selected-section">
+        <span class="bold-label">Selected</span>
+        <span class="label-text" ng-hide="mode == 'absolute'">{{ internalRange.suggestedRange().from | date: 'EEE d MMM yyyy HH:mm' }} &nbsp;&ndash;&nbsp; {{ internalRange.suggestedRange().to | date: 'EEE d MMM yyyy HH:mm' }} {{ threeLetterTimezoneLabel }}</span>
+        <span class="label-text" ng-show="mode == 'absolute'">{{ internalRange.from | date: 'EEE d MMM yyyy HH:mm' }} &nbsp;&ndash;&nbsp; {{ internalRange.to | date: 'EEE d MMM yyyy HH:mm' }} {{ threeLetterTimezoneLabel }}</span>
+      </div>
+      <div style="float:right">
+        <button class="btn btn-sm btn-default" ng-click="configuring = false" ng-show='cancel'>Cancel</button>
+        <span ng-show='comboButton'>
+                    <div class="btn-group report-actions" dropdown>
+                        <a class="btn-primary btn btn-sm" id="report-edit" ng-click="runSync()">Run Report</a>
+                        <button type="button" class="btn-primary btn btn-sm dropdown-toggle" style="height:28px">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ng-click="runSync()">Run Report</a></li>
+                            <li><a ng-click="runAsync()">Submit Job</a></li>
+                        </ul>
+                    </div>
+              </span>
+        <span ng-show='!comboButton'>
+                  <a class="btn-primary btn btn-sm" ng-click="runAsync(this)">Submit Job</a>
+              </span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

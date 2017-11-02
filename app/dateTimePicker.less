@@ -1,0 +1,189 @@
+@import "datepick-addons/redmond.datepick.less";
+@import "datepick-addons/datepickCustom.less";
+@import "custom-bootstrap/bootstrap.less";
+@import "ax-time-picker/timePicker.less";
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.date-time-picker * {
+    box-sizing: content-box;
+}
+.date-time-picker {
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    .btn-group .btn {
+        box-sizing: border-box;
+    }
+    .btn {
+        border: 1px solid #b7c0c4;
+        border-radius: 4px;
+        font-weight: normal;
+        .button-label {
+            float: left;
+        }
+        .caret {
+            float: right;
+            margin: 6px 0 0 3px;
+        }
+    }
+    .main-label-container {
+        float: left;
+        .main-date-time-label {
+            border: 1px solid #DBDBDB;
+            color: #333333;
+            padding: 4px 10px;
+            height: 18px;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            line-height: 18px;
+            .border-radius(2px);
+            &:hover{
+                text-decoration: none;
+            }
+            &.closed {
+                &:hover {
+                    background-color: #f7f7f7;
+                }
+            }
+            .dt-bolder {
+                font-size: 18px;
+            }
+            .dt-lighter {
+                color: #333333;
+                font-size: 13px;
+                font-weight: 300;
+            }
+        }
+    }
+    .btn-refresh {
+        margin-left: 10px;
+        .icon-refresh {
+            margin-right: 2px;
+            background-position: -196px -2px;
+            background-image: url("icons.png");
+            margin-top: -1px;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            line-height: 14px;
+            vertical-align: text-top;
+            background-repeat: no-repeat;
+        }
+        &:hover {
+            .icon-refresh {
+                background-position: -210px -2px;
+            }
+        }
+    }
+    .date-time-configure {
+        padding: 11px;
+        .border-radius(3px);
+        position: absolute;
+        width: 612px;
+        border: 1px solid #DBDBDB;
+        background-color: #FFFFFF;
+        z-index: 100;
+        top: 34px;
+        box-shadow: 0 2px 6px rgba(0,0,0, .15);
+        .bold-label {
+            margin-right: 10px;
+            font-weight: 500;
+            display: inline-block;
+            width: 62px;
+            text-align: right;
+            float: left;
+            line-height: 26px;
+        }
+        .label-text {
+            line-height: 26px;
+            display: inline-block;
+            padding-top: 1px;
+        }
+        .key-value-section {
+            margin-top: 10px;
+            .btn-group > .btn {
+                width: 113px;
+                text-align: left;
+            }
+        }
+        .single-date-section {
+            margin-left: 55px;
+        }
+        .time-picker-label {
+            margin-top: 18px;
+        }
+        .sections {
+            height: 270px;
+            width: 100%;
+            margin-bottom: 10px;
+            .date-range-selection,
+            .time-range-selection {
+                float: left;
+                width: 405px;
+                height: 100%;
+            }
+            .double-calendar-container {
+                float: left;
+                height: 267px;
+                border: 1px solid #E5EBED;
+                border-radius: 5px;
+                width: 403px;
+                .datepick {
+                    border: none;
+                    box-shadow: none;
+                    width: 394px!important;
+                }
+            }
+            .time-range-container {
+                float: left;
+                width: 186px;
+                height: 267px;
+                border: 1px solid #E5EBED;
+                border-radius: 5px;
+                margin-right: 10px;
+                .bold-label {
+                    width: 57px;
+                }
+            }
+            .section-configure {
+                width: 195px;
+                float: left;
+                height: 267px;
+                border: 1px solid #E5EBED;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+        }
+        .bottom-section {
+            .button-section {
+                width: 150px;
+                float: right;
+                .btn {
+                    margin-left: 10px;
+                    float: right;
+                    font-size: 13px;
+                    font-weight: bold;
+                    padding: 4px 10px;
+                    line-height: 18px;
+                }
+            }
+            .selected-section {
+                margin-top: 5px;
+                float: left;
+                .bold-label {
+                    line-height: 18px;
+                    width: auto;
+                }
+                .label-text {
+                    line-height: 18px;
+                    background-color: #E4F3FF;
+                }
+            }
+        }
+    }
+}
