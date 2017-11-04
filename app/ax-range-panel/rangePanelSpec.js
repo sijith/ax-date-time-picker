@@ -13,7 +13,7 @@ describe('Range Panel', function () {
             { label: 'Last 24 Hours', duration: { unit: 'day', value: 1 }},
             { label: 'Last 7 Days', duration: { unit: 'week', value: 1 }},
             { label: 'Custom Range', custom: true }];
-        element = $compile('<range-panel observer="observer" dictionary="dictionary" hide-time-unit="hideTimeUnit" single-date="singleDate"></range-panel>')(scope);
+        element = $compile('<ax-range-panel observer="observer" dictionary="dictionary" hide-time-unit="hideTimeUnit" single-date="singleDate"></ax-range-panel>')(scope);
         $timeout.flush();
     }
 
@@ -102,24 +102,6 @@ describe('Range Panel', function () {
         element.isolateScope().selectFrom({ value: twoHoursAgo, label: `{twoHoursAgo}:00` });
         expect(dateTest.selectedRange.label).toBe('Custom Range');
         expect(moment(element.isolateScope().internalRange.from).hours()).toBe(twoHoursAgo);
-    });
-
-    it('Can select a different duration', function () {
-        scope.observer.emit('durationPanelSpec', TimeResolution.timeResolutionFromLocal({ label: 'Last Hour', duration: { unit: 'hour', value: 1 }}));
-        var dateTest;
-        element.isolateScope().observer.subscribe('durationPanelSpec', function (date) {
-            dateTest = date;
-        });
-        element.isolateScope().selectDuration({ value: 2, label: '2 hours', unit: 'hours' });
-        scope.$digest();
-        expect(element.isolateScope().internalRange.selectedRange.label).toBe('Custom Range');
-        expect(element.isolateScope().selectedDuration.value).toBe(2);
-        expect(element.isolateScope().internalRange.timeUnit).toBe('minute');
-        expect(element.isolateScope().selectedFrom.value).toBeDefined();
-        expect(angular.element(element.find(".to-value")[0]).html()).not.toBe('');
-        var from = new moment(element.isolateScope().internalRange.from);
-        var to = new moment(element.isolateScope().internalRange.to);
-        expect(to.diff(from, 'hours')).toBe(2);
     });
 });
 

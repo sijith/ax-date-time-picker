@@ -9,7 +9,7 @@ describe('Absolute Panel', function () {
     function compileDirective() {
         scope.observer = new RangeObserver();
         scope.dictionary = service.defaultDictionary;
-        element = $compile('<absolute-panel observer="observer" dictionary="dictionary" hide-time-unit="hideTimeUnit"></absolute-panel>')(scope);
+        element = $compile('<ax-absolute-panel observer="observer" dictionary="dictionary" hide-time-unit="hideTimeUnit"></ax-absolute-panel>')(scope);
         $timeout.flush();
     }
 

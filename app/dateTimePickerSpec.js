@@ -50,7 +50,7 @@ describe('Date Time Picker', function () {
     });
 
     it('Shows and hides configuration panel', function () {
-        expect(element.isolateScope().configuring).toBeUndefined();
+        expect(element.isolateScope().configuring).toBe(false);
         expect(element.find('.date-time-configure').hasClass('ng-hide')).toBe(true);
         element.isolateScope().configuring = true;
         $rootScope.$digest();

@@ -6,7 +6,7 @@ import customAxDtPicker from './dateTimePicker';
 import { timePicker, hours, minutes } from './ax-time-picker/axTimePicker';
 import doubleCalendar from './ax-double-calendar/axDoubleCalendar';
 import rangePanel from './ax-range-panel/axRangePanel';
-import absolutePanel from './absolute-panel/absolutePanel';
+import absolutePanel from './ax-absolute-panel/axAbsolutePanel';
 import pickerService from './pickerService';
 import bootstrapService from './custom-bootstrap/bootstrapService';
 

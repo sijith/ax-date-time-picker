@@ -10,7 +10,7 @@ describe('Time Picker', function () {
         scope.update = function (value) {
             updatedValue = value;
         };
-        element = $compile('<time-picker time="time" update="update(value)"></time-picker>')(scope);
+        element = $compile('<ax-time-picker time="time" update="update(value)"></ax-time-picker>')(scope);
         scope.$digest();
     }
 

@@ -16,6 +16,7 @@ function customAxDtPicker($timeout, service, bootstrapService) {
             options: '=',
             rangeDictionary: '=',
             mode: '=',
+            cancel: '=',
             onSyncClick: '&',
             onAsyncClick: '&',
             onClick: '&',
@@ -140,7 +141,8 @@ function customAxDtPicker($timeout, service, bootstrapService) {
 
             scope.comboButton = true;
             scope.configuring = (scope.expandConfigure) ?  true : false;
-            if(scope.options.from && scope.options.to && scope.options.timeUnit) {
+
+            if(scope.options && scope.options.from && scope.options.to && scope.options.timeUnit) {
                 scope.dateParams = {
                     'from' : scope.options.from,
                     'to' : scope.options.to,

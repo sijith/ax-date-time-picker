@@ -11,7 +11,7 @@ describe('Double Calendar', function () {
 
     function compileDirective() {
         scope.observer = new RangeObserver();
-        element = $compile('<double-calendar observer="observer" max-range="maxRange" single-date="singleDate"></double-calendar>')(scope);
+        element = $compile('<ax-double-calendar observer="observer" max-range="maxRange" single-date="singleDate"></ax-double-calendar>')(scope);
         $timeout.flush();
     }
 

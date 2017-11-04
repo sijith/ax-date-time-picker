@@ -1,7 +1,7 @@
-import template from './absolutePanel.html';
+import template from './axAbsolutePanel.html';
 import moment from 'moment';
 
-function absolutePanel($timeout) {
+function axAbsolutePanel($timeout) {
     return {
         restrict: 'E',
         replace: true,
@@ -80,4 +80,4 @@ function absolutePanel($timeout) {
     }
 }
 
-export default absolutePanel;
+export default axAbsolutePanel;
