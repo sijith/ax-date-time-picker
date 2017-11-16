@@ -1,7 +1,7 @@
 <div class="ax-date-time-picker">
     <div ng-show="pickerEnabled">
         <div class="main-label-container">
-            <a class="main-date-time-label" ng-class="configuring ? 'configuring' : 'closed'" ng-click="configuring = !configuring">
+            <a class="main-date-time-label" ng-class="configuring ? 'configuring' : 'closed'" ng-click="configuring = !configuring && !disableConfigure">
                 <span class="dt-lighter">{{ range.from | date: 'EEE' }}</span>
                 <span class="dt-bolder">{{ range.from | date: 'd MMM yyyy' }}</span>
                 <span class="dt-lighter">{{ range.from | date: 'HH:mm' }}</span>

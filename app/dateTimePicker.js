@@ -22,6 +22,7 @@ function customAxDtPicker($timeout, service, bootstrapService) {
             onClick: '&',
             pickerEnabled: '=',
             expandConfigure: '=',
+            disableConfigure: '='
         },
         template: template,
         link: function (scope) {
