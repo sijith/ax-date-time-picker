@@ -12,7 +12,7 @@
                 <span class="dt-lighter">{{ threeLetterTimezoneLabel }}</span>
             </a>
         </div>
-        <button class="btn-refresh btn btn-sm" href="" ng-click="refresh()"><i class="icon-refresh"></i></button>
+        <button class="btn-refresh btn btn-sm" href="" ng-click="refresh()" ng-show="!disableRefresh"><i class="icon-refresh"></i></button>
         <div class="clearfix"></div>
     </div>
   <div class="date-time-configure" ng-show="configuring">
