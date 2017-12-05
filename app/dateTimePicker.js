@@ -118,7 +118,7 @@ function customAxDtPicker($timeout, service, bootstrapService) {
 
             scope.changeButton = function (startTimeStamp, endTimeStamp) {
                 var numberOfDays =  Math.floor(( endTimeStamp - startTimeStamp ) / 86400000);
-                if(numberOfDays > 14) {
+                if(numberOfDays > 15) {
                     scope.comboButton = false;
                 }
                 else {
