@@ -113,7 +113,7 @@ Running test coverage report:
 
     npm run test:coverage
 
-Creating a new build is done running:
+Creating a new build is done by running:
 
     npm run build
 
