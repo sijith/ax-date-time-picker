@@ -18,14 +18,17 @@ function axAbsolutePanel($timeout) {
              * this function verifies which time units are available to select from (hours and days).
              * Up to 36 hours the only time unit available is hours.
              * More than 36 hours and up to 7 days can be retrieved by hours and days.
-             * For more days than that the only available unit is days.
+             * Between 7 days to 60 days the only time unit available is days.
+             * More than or equal to 60 days can be retrieved by days or months.
              * @param from
              * @param to
              */
                 // FIXME: max resolution is now hardcoded to 200 (because of highcharts performance issues), it should be configurable
             function setupAvailableTimeUnits () {
                 var hours = moment(scope.internalRange.to).diff(moment(scope.internalRange.from), 'hours');
-                if (hours > 36 && hours < 200) {
+                if (hours >= 1440) {
+                    scope.internalRange.selectedRange.timeUnits = [ 'day', 'month' ];
+                } else if (hours > 36 && hours < 200) {
                     scope.internalRange.selectedRange.timeUnits = [ 'hour', 'day' ];
                 } else if (hours > 1 && hours < 4) {
                     scope.internalRange.selectedRange.timeUnits = [ 'minute', 'hour' ];
