@@ -30,7 +30,7 @@ function axDoubleCalendar($timeout) {
             function finishRange(fromDate, toDate) {
                 var from =  moment(fromDate).startOf('day').valueOf();
                 var to = moment(toDate).add(1, 'days').startOf('day').valueOf();
-                setMinMaxDates('-6m', +0);
+                setMinMaxDates('-15m', +0);
                 jQuery(element).datepick('setDate', new Date(from), new Date(to - 1));
                 setDateAndEmit(from, to);
             }
@@ -71,7 +71,7 @@ function axDoubleCalendar($timeout) {
                 scope.observer.subscribe('doubleCalendar', function (range) {
                     scope.internalRange = range;
                     internalSetting = true;
-                    setMinMaxDates('-6m', +0);
+                    setMinMaxDates('-15m', +0);
                     jQuery(element).datepick('setDate', new Date(range.from), new Date(range.to - 1));
                     jQuery(element).datepick('showMonth', moment(range.from).year(), moment(range.from).month());
                     rangeStarted = false;
@@ -81,7 +81,7 @@ function axDoubleCalendar($timeout) {
             jQuery(element).datepick({
                 rangeSelect: true,
                 monthsToShow: 2,
-                minDate: '-6m',
+                minDate: '-15m',
                 maxDate: +0,
                 changeMonth: false,
                 dayNamesMin : ["S", "M", "T", "W", "T", "F", "S"],
